@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="${HOME}/.dataset/hdfs/"
+file="${HOME}/.dataset/Autoencoder-HDFS/"
 if [ -e $file ]
 then
   echo "$file exists"
