@@ -1,9 +1,9 @@
 import os
 import json
 import numpy as np
-from autoencoder_hdfs.model import Autoencoder
-from autoencoder_hdfs.data_loader import prepare_datasets
-from autoencoder_hdfs.utils import evaluate
+from model import Autoencoder
+from data_loader import prepare_datasets
+from utils import evaluate
 
 train_file = '../output/hdfs/train'
 test_normal_file = '../output/hdfs/test_normal'
