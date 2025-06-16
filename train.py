@@ -24,9 +24,9 @@ mse_normal = np.mean(np.square(x_test_normal - pred_normal), axis=1)
 mse_abnormal = np.mean(np.square(x_test_abnormal - pred_abnormal), axis=1)
 
 # Ajuste de umbral
-threshold = np.percentile(mse_normal, 95)
+threshold = np.percentile(mse_normal, 96)
 
-print("Threshold (95th percentile):", threshold)
+print("Threshold (96th percentile):", threshold)
 print("Avg MSE - Normal:", np.mean(mse_normal))
 print("Avg MSE - Abnormal:", np.mean(mse_abnormal))
 
