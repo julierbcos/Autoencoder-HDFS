@@ -89,6 +89,21 @@ plt.savefig("output/metricas_vs_threshold.png")
 plt.close()
 print("\nGráfico guardado en: output/metricas_vs_threshold.png")
 
-# Añadir tiempo de ejecución
+# Guardar métricas del mejor threshold
 execution_time = time.time() - start_time
-metrics_final["Execution_Time_Seconds"] = round(execution_time, 2)
+metrics_best = {
+    "F1": best_f1,
+    "Precision": precision_list[best_idx],
+    "Recall": recall_list[best_idx],
+    "Best_Percentile": float(best_percentil),
+    "Best_Threshold": float(best_threshold),
+    "Execution_Time_Seconds": round(execution_time, 2)
+}
+
+with open('output/metrics_autoencoder.json', 'w') as f:
+    json.dump(metrics_best, f, indent=2)
+
+print("\n--- MÉTRICAS GUARDADAS (mejor F1) ---")
+print(json.dumps(metrics_best, indent=2))
+print(f"\nTiempo total de ejecución: {execution_time:.2f} segundos")
+
